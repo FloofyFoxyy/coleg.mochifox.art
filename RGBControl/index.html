@@ -1,1 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>RGB Light Controller</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="app">
+            <header class="app__header">
+                <h1>RGB Light Controller</h1>
+                <p class="muted">
+                    Build an API-Ready payload to control a simulated RGB Light
+                </p>
+            </header>
 
+            <section class="card">
+                <div class="controls">
+                    <div class="control">
+                        <label for="red">Red <span class="value" id="redValue">128</span></label>
+                        <input id="red" type="range" min="0" max="255" value="128" />
+                    </div>
+
+                    <div class="control">
+                        <label for="green">Green <span class="value" id="greenValue">128</span></label>
+                        <input id="green" type="range" min="0" max="255" value="128" />
+                    </div>
+
+                    <div class="control">
+                        <label for="blue">Blue <span class="value" id="blueValue">128</span></label>
+                        <input id="blue" type="range" min="0" max="255" value="128" />
+                    </div>
+
+                    <div class="control">
+                        <label for="brightness">Brightness <span class="value" id="brightnessValue">100</span></label>
+                        <input id="brightness" type="range" min="0" max="100" value="100" />
+                    </div>
+                </div>
+
+                <div class="previewWrap">
+                    <div class="preview" id="preview">
+                        <div class="preview__label">
+                            <div><strong>Preview</strong></div>
+                            <div class="muted small">HEX: <span id="hexValue">#ffcdfe</span></div>
+                        </div>
+                    </div>
+
+                <div class="payload">
+                    <div class="payload__header">
+                        <strong>API Payload</strong>
+                        <button id="sendBtn" type="button" class="btn">Send to API</button>
+                    </div>
+                    <pre id="jsonOutput" class="codeBlock">{}</pre>
+                    <p id="status" class="status muted"></p>
+                </div>
+            </section>
+            <footer class="app__footer muted small">
+                The API is currently simulated and will be replaced with a functioning API at a later date.
+            </footer>
+        </main>
+        <script src="app.js"></script>
+    </body>
+</html>
